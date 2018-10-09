@@ -1,0 +1,23 @@
+﻿<Window x:Class="FinalProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525"
+        Loaded="windowLoaded">
+    <Grid>
+        <TextBox Name="Hr_Box" HorizontalAlignment="Left" Height="30" Margin="38,93,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="50" Text="{Binding Hr}"/>
+        <TextBox Name ="Min_Box" HorizontalAlignment="Left" Height="30" Margin="93,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Text="{Binding Min}"/>
+        <TextBox Name ="Sec_Box" HorizontalAlignment="Left" Height="30" Margin="148,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Text="{Binding Sec}"/>
+        <Label Content="Hr" HorizontalAlignment="Left" Margin="38,65,0,0" VerticalAlignment="Top"/>
+        <Label Content="Min" HorizontalAlignment="Left" Margin="93,65,0,0" VerticalAlignment="Top"/>
+        <Label Content="Sec" HorizontalAlignment="Left" Margin="148,62,0,0" VerticalAlignment="Top"/>
+        <Button Name ="SetTime" Content="Set Time" HorizontalAlignment="Left" Margin="270,93,0,0" VerticalAlignment="Top" Width="75" Background="Yellow" Height="35" Click="SetTime_Click" />
+        <Button Name ="SetAlarm" Content="Set Alarm" HorizontalAlignment="Left" Margin="415,93,0,0" VerticalAlignment="Top" Width="75" Background="Red" Height="35" Click="SetAlarm_Click" />
+        <Button Name="NowTime" Content="Now Time" HorizontalAlignment="Left" Margin="270,158,0,0" VerticalAlignment="Top" Width="75" Background="Yellow" Height="36" Click="NowTime_Click"/>
+        <TextBox Name="StatusBar" HorizontalAlignment="Left" Height="53" Margin="38,246,0,0" TextWrapping="Wrap" Text="{Binding Status}" VerticalAlignment="Top" Width="452"/>
+
+    </Grid>
+</Window>

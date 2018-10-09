@@ -1,0 +1,97 @@
+﻿<Window x:Class="Alarm_Front_End.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Digital Clock" Height="200" Width="325"
+        Loaded="Window_Loaded" 
+        Closing="Window_Closing">
+    <Grid>
+        <Canvas Background="Black"  x:Name="MyCanvas" Margin="0,0,0,0">
+            <Ellipse Height ="10" Width="10" Fill="Blue" Canvas.Left="98" Canvas.Top="100"></Ellipse>
+            <Ellipse Height ="10" Width="10" Fill="Blue" Canvas.Left="98" Canvas.Top="75"></Ellipse>
+            <Ellipse Height ="10" Width="10" Fill="Blue" Canvas.Left="198" Canvas.Top="100"></Ellipse>
+            <Ellipse Height ="10" Width="10" Fill="Blue" Canvas.Left="198" Canvas.Top="75"></Ellipse>
+
+            <Label x:Name="label" Content="Alarm!!!" Foreground="Yellow" Width="99" Visibility="{Binding alarmVisible}" FontSize="24" Canvas.Top="5" HorizontalAlignment="Center" Canvas.Left="109"/>
+
+            <ItemsControl
+            x:Name="SevenSegmentLED">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate x:Name="LEDTemplate">
+                        <Canvas x:Name="DataTemplateCanvas">
+                            <StackPanel VerticalAlignment="Bottom" Height="80" Width="40"
+                                Canvas.Top ="{Binding top}"
+                                Canvas.Left="{Binding left}"
+                                Background="Black">
+                                <Canvas>
+                                    <Rectangle Name="TopHorizontal"
+                                        Fill="Red"
+                                        Stroke="Red"
+                                        Height="5"
+                                        Width="30"
+                                        Canvas.Top="0"
+                                        Canvas.Left ="5"
+										Visibility="{Binding aVisible}">
+                                    </Rectangle>
+                                    <Rectangle Name="MiddleHorizontal"
+                                        Fill="Red"
+                                        Stroke="Red"
+                                        Height="5"
+                                        Width="30"
+                                        Canvas.Top="38"
+                                        Canvas.Left ="5"
+										Visibility="{Binding gVisible}">
+                                    </Rectangle>
+                                    <Rectangle Name="BottomHorizontal"
+                                        Fill="Red"
+                                        Stroke="Red"
+                                        Height="5"
+                                        Width="30"
+                                        Canvas.Top="75"
+                                        Canvas.Left ="5"
+										Visibility="{Binding dVisible}">
+                                    </Rectangle>
+                                    <Rectangle Name="TopLeftVertical"
+                                        Fill="Red"
+                                        Stroke="Red"
+                                        Height="30"
+                                        Width="5"
+                                        Canvas.Top="5"
+                                        Canvas.Left ="0"
+										Visibility="{Binding fVisible}">
+                                    </Rectangle>
+                                    <Rectangle Name="BottomLeftVertical"
+                                        Fill="Red"
+                                        Stroke="Red"
+                                        Height="30"
+                                        Width="5"
+                                        Canvas.Top="43"
+                                        Canvas.Left ="0"
+										Visibility="{Binding eVisible}">
+                                    </Rectangle>
+                                    <Rectangle Name="TopRightVertical"
+                                        Fill="Red"
+                                        Stroke="Red"
+                                        Height="30"
+                                        Width="5"
+                                        Canvas.Top="5"
+                                        Canvas.Left ="35"
+										Visibility="{Binding bVisible}">
+                                    </Rectangle>
+                                    <Rectangle Name="BottomRightVertical"
+                                        Fill="Red"
+                                        Stroke="Red"
+                                        Height="30"
+                                        Width="5"
+                                        Canvas.Top="43"
+                                        Canvas.Left ="35"
+										Visibility="{Binding cVisible}">
+                                    </Rectangle>
+                                </Canvas>
+                            </StackPanel>
+                        </Canvas>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Canvas>
+    </Grid>
+</Window>
